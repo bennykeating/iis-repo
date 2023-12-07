@@ -6,6 +6,19 @@
       ansible.builtin.debug:
         msg: Hello World!!!
         
+    - name: Install IIS (Web-Server only)
+      ansible.windows.win_feature:
+        name: Web-Server
+        state: present
+    
+    - name: Set the contents of a file
+      ansible.windows.win_copy:
+        content: "{{ iis_webpage_content }}"
+        dest: C:\Inetpub\wwwroot\index.html
+
+    - debug:
+        msg: Visit us at http://{{ ansible_host }}
+
 
 
 
