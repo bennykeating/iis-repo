@@ -1,0 +1,11 @@
+---
+- name: My play to install iis
+  hosts: windows
+  tasks:
+    - name: print Hello World
+      ansible.builtin.debug:
+        msg: Hello World!!!
+        
+
+
+
